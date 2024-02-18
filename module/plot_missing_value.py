@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def percentage(orders_df):
+def percentage(df):
     """
     This function calculates the percentage of missing values in each column of the given DataFrame.
     It then plots these percentages in a bar chart.
@@ -15,11 +15,11 @@ def percentage(orders_df):
     None
     """
     # Calculate the percentage of missing values in each column
-    missing = orders_df.isnull().sum() * 100 / len(orders_df)
+    missing = df.isnull().sum() * 100 / len(df)
 
     # Create a DataFrame with the results
     percentage_missing = pd.DataFrame({
-        'column': orders_df.columns,
+        'column': df.columns,
         'missing_percentage %': missing.values
     })
 
